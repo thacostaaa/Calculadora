@@ -181,5 +181,7 @@ int main()
         convertToDecimal();
     }
 
+    // TODO: Adicionar loop para voltar ao menu após o cálculo
+
     return 0;
 }
