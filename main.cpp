@@ -172,6 +172,7 @@ int main()
     // Resolve problema com caracteres especiais no terminal, ex: ç/ã/á
     setlocale(LC_ALL, "Portuguese");
 
+    // Mostra o menu com as opções
     optionMenu();
 
     if (option==1) {
