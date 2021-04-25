@@ -1,4 +1,4 @@
-# Calculadora - Etapa 1
+# Calculadora
 ## Projeto da matéria Hands on Work
 **Autores:** Felipe de Macedo Santos, Nathalie Baréa Silveira e Thais Costa de Carvalho
 
