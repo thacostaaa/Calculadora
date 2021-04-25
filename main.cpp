@@ -185,6 +185,10 @@ int main()
             convertToDecimal();
         }
 
+        /*
+        Pergunta o que o usuário deseja fazer, calcular novamente ou sair
+        Repete a mensagem caso uma opção inválida tenha sido escolhida
+        */
         do {
             if (cin.fail()) {
                 cin.clear();
