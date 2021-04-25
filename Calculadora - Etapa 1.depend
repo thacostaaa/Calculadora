@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1616868077 source:c:\users\thaco\downloads\calculadora\calculadora - etapa 1\main.cpp
-	<iostream>
-	<cmath>
-	<locale.h>
-	<stdlib.h>
-

@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <locale.h>
-#include <stdlib.h>
 
 using namespace std;
 
@@ -14,6 +12,9 @@ void dividerLine()
 
 void optionMenu()
 {
+    // Limpa o console
+    system ("CLS");
+
     dividerLine();
     cout << "\nCalculadora Felipe, Nathalie e Thais\n" << endl;
     dividerLine();
@@ -27,10 +28,11 @@ void optionMenu()
     // Checa se o valor digitado é válido
     if(cin.fail()){
         cin.clear();
-        cin.ignore();
+        cin.ignore(100, '\n');
+        optionMenu();
+    } else {
+        dividerLine();
     }
-
-    dividerLine();
 }
 
 void convertToBinary()
@@ -50,7 +52,7 @@ void convertToBinary()
     // Checa se o valor digitado é válido
     if(cin.fail()) {
         cin.clear();
-        cin.ignore();
+        cin.ignore(100, '\n');
         cout << "Valor inválido" << endl;
         dividerLine();
     } else {
@@ -113,7 +115,7 @@ void convertToDecimal()
     // Checa se o valor digitado é válido
     if(cin.fail()) {
         cin.clear();
-        cin.ignore();
+        cin.ignore(100, '\n');
         cout << "Valor inválido" << endl;
         dividerLine();
     } else {
@@ -172,16 +174,27 @@ int main()
     // Resolve problema com caracteres especiais no terminal, ex: ç/ã/á
     setlocale(LC_ALL, "Portuguese");
 
-    // Mostra o menu com as opções
-    optionMenu();
+    // Repetir a mesma sequência enquanto a opção não for 0 (sair)
+    while (option!=0)
+    {
+        optionMenu();
 
-    if (option==1) {
-        convertToBinary();
-    } else if (option==2) {
-        convertToDecimal();
+        if (option==1) {
+            convertToBinary();
+        } else if (option==2) {
+            convertToDecimal();
+        }
+
+        do {
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(100, '\n');
+            }
+
+            cout << "Digite 1 para converter outro número ou 0 para sair: ";
+            cin >> option;
+        } while (cin.fail());
     }
-
-    // TODO: Adicionar loop para voltar ao menu após o cálculo
 
     return 0;
 }
